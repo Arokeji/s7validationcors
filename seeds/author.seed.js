@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { connect } = require("../db.js");
 const { Author } = require("../models/Author.js");
-const { faker } = require("@faker-js/faker");
+// const { faker } = require("@faker-js/faker");
 
 const authorSeed = async () => {
   try {
