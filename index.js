@@ -3,7 +3,7 @@ const { bookRoutes } = require("./routes/book.routes.js");
 const { authorRoutes } = require("./routes/author.routes.js");
 const cors = require("cors");
 
-const corsWhiteList = ["http://localhost:3000", "https://s7validationcors.vercel.app"];
+const corsWhiteList = ["http://localhost:3000/", "https://s7validationcors.vercel.app/"];
 
 // La intencion del main es que sea una funcion async para poder hacer await en connect
 // para el despliegue en Vercel

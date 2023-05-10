@@ -37,10 +37,11 @@ router.get("/", async (req, res) => {
 
 // CRUD: Create
 router.post("/", async (req, res) => {
+  console.log("Creando autor");
   try {
     const author = new Author({
-      name: req.body.title,
-      country: req.body.author,
+      name: req.body.name,
+      country: req.body.country,
     });
 
     const createdAuthor = await author.save();
@@ -75,10 +76,10 @@ router.get("/:id", async (req, res) => {
 
 // No CRUD. Busqueda personalizada
 router.get("/name/:name", async (req, res) => {
-  const title = req.params.title;
+  const name = req.params.name;
 
   try {
-    const author = await Author.find({ title: new RegExp("^" + title.toLowerCase(), "i") });
+    const author = await Author.find({ name: new RegExp("^" + name.toLowerCase(), "i") });
     if (author) {
       res.json(author);
     } else {
